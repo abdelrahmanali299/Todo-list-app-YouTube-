@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/core/utils/app_textstyles.dart';
+import 'package:to_do_list/core/widgets/back_button.dart';
 import 'package:to_do_list/features/onboarding/presentation/views/widgets/auth_buttons_section.dart';
 
 class WelcomeViewBody extends StatelessWidget {
@@ -9,15 +10,7 @@ class WelcomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
-          alignment: Alignment.topLeft,
-          child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back_ios_new, size: 24),
-          ),
-        ),
+        Align(alignment: Alignment.topLeft, child: ButtonBack()),
         SizedBox(height: 55),
         Text('Welcome to UpTodo', style: AppTextStyles.latoBold32),
         SizedBox(height: 25),

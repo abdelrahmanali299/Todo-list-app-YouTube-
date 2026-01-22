@@ -5,16 +5,19 @@ class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     super.key,
     this.onPressed,
-    required this.title,
+    this.title,
     this.backgroundColor,
+    this.child,
   });
   final void Function()? onPressed;
-  final String title;
+  final String? title;
   final backgroundColor;
+  final Widget? child;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        fixedSize: WidgetStatePropertyAll(Size(0, 50)),
         shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
@@ -26,10 +29,12 @@ class CustomElevatedButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: Text(
-        title,
-        style: AppTextStyles.latoRegular16.copyWith(color: Colors.white),
-      ),
+      child:
+          child ??
+          Text(
+            title!,
+            style: AppTextStyles.latoRegular16.copyWith(color: Colors.white),
+          ),
     );
   }
 }

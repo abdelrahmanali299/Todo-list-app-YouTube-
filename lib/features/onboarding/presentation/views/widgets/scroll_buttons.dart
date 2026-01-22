@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as _ToDOListState;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:to_do_list/core/constants.dart';
 import 'package:to_do_list/core/services/prefs_service.dart';
@@ -8,7 +7,6 @@ import 'package:to_do_list/core/widgets/custom_text_button.dart';
 import 'package:to_do_list/features/onboarding/presentation/manager/cubits/onboarding/onboarding_cubit.dart';
 import 'package:to_do_list/features/onboarding/presentation/manager/cubits/onboarding/onboarding_states.dart';
 import 'package:to_do_list/features/onboarding/presentation/views/welcome_view.dart';
-import 'package:to_do_list/main.dart';
 
 class ScrollButtons extends StatelessWidget {
   const ScrollButtons({super.key});

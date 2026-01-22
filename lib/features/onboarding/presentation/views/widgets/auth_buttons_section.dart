@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/core/widgets/custom_elevated_button.dart';
+import 'package:to_do_list/features/auth/presentation/views/login_view.dart';
 
 class AuthButtonsSection extends StatelessWidget {
   const AuthButtonsSection({super.key});
@@ -11,7 +12,12 @@ class AuthButtonsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          CustomElevatedButton(title: 'LOGIN', onPressed: () {}),
+          CustomElevatedButton(
+            title: 'LOGIN',
+            onPressed: () {
+              Navigator.pushNamed(context, LoginView.routeName);
+            },
+          ),
           SizedBox(height: 25),
           CustomElevatedButton(
             backgroundColor: Colors.transparent,
