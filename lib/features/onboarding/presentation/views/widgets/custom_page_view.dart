@@ -32,6 +32,17 @@ class _CustomPageViewState extends State<CustomPageView> {
     ),
   ];
   @override
+  void initState() {
+    super.initState();
+    context.read<OnboardingCubit>().pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    context.read<OnboardingCubit>().pageController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return PageView.builder(

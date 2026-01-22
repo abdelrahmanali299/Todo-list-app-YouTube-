@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/core/utils/app_textstyles.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({super.key, required this.title, this.onPressed});
@@ -10,10 +11,8 @@ class CustomTextButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         title,
-        style: TextStyle(
-          fontWeight: FontWeight.w400,
-          fontSize: 16,
-          color: Colors.grey,
+        style: AppTextStyles.latoRegular16.copyWith(
+          color: Colors.white.withValues(alpha: 0.67),
         ),
       ),
     );

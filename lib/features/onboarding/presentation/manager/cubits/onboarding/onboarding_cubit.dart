@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:to_do_list/features/onboarding/presentation/manager/cubits/onboarding/onboarding_states.dart';
 
 class OnboardingCubit extends Cubit<OnboardingStates> {
-  int currentPageIndex = 0;
-  PageController pageController = PageController();
   OnboardingCubit() : super(OnboardingInitial());
+  int currentPageIndex = 0;
+  late PageController pageController;
   void changePage(int index) {
     pageController.animateToPage(
       index,
