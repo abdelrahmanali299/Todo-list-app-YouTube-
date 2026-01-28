@@ -6,8 +6,8 @@ import 'package:to_do_list/core/widgets/custom_text_button.dart';
 import 'package:to_do_list/core/widgets/custom_text_field.dart';
 import 'package:to_do_list/features/auth/presentation/views/widgets/or_section.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class RegisterViewBody extends StatelessWidget {
+  const RegisterViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class LoginViewBody extends StatelessWidget {
           children: [
             Align(alignment: Alignment.topLeft, child: ButtonBack()),
             SizedBox(height: 40),
-            Text('Login', style: AppTextStyles.latoBold32),
+            Text('Register', style: AppTextStyles.latoBold32),
             SizedBox(height: 50),
             Text('Username', style: AppTextStyles.latoRegular16),
             SizedBox(height: 5),
@@ -28,9 +28,13 @@ class LoginViewBody extends StatelessWidget {
             Text('Password', style: AppTextStyles.latoRegular16),
             SizedBox(height: 5),
             CustomTextField(hint: '● ● ● ● ● ● ●', obscureText: true),
+            SizedBox(height: 25),
+            Text('Confirm Password', style: AppTextStyles.latoRegular16),
+            SizedBox(height: 5),
+            CustomTextField(hint: '● ● ● ● ● ● ●', obscureText: true),
             SizedBox(height: 70),
 
-            CustomElevatedButton(title: 'Login', onPressed: () {}),
+            CustomElevatedButton(title: 'Register', onPressed: () {}),
             SizedBox(height: 30),
             OrSection(),
             SizedBox(height: 30),
@@ -43,7 +47,7 @@ class LoginViewBody extends StatelessWidget {
                 children: [
                   Image.asset('assets/images/google.png'),
                   Text(
-                    'Login with Google',
+                    'Register with Google',
                     style: AppTextStyles.latoRegular16.copyWith(
                       color: Colors.white,
                     ),
@@ -61,7 +65,7 @@ class LoginViewBody extends StatelessWidget {
                 children: [
                   Image.asset('assets/images/apple.png'),
                   Text(
-                    'Login with Apple',
+                    'Register with Apple',
                     style: AppTextStyles.latoRegular16.copyWith(
                       color: Colors.white,
                     ),
@@ -74,15 +78,15 @@ class LoginViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Don’t have an account?',
+                  'Already have an account?',
                   style: AppTextStyles.latoRegular12.copyWith(
                     color: Color(0xff979797),
                   ),
                 ),
                 CustomTextButton(
-                  title: 'Register',
+                  title: 'Login',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/register');
+                    Navigator.pop(context);
                   },
                 ),
               ],
